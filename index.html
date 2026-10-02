@@ -1,0 +1,47 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>상보 相補 | Portfolio</title>
+<style>
+:root{--ink:#1c1f26;--paper:#f6f4ef;--red:#c8372d;--line:#ddd8cc;--mut:#6b7280}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.7}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-weight:800;font-size:20px;display:flex;align-items:center;gap:8px}
+.mark{width:26px;height:26px;position:relative}.mark:before,.mark:after{content:"";position:absolute;top:0;width:13px;height:26px;border:2px solid var(--ink)}
+.mark:before{left:0;border-radius:13px 0 0 13px;border-right:0}.mark:after{right:0;border-radius:0 13px 13px 0;border-left:0;border-color:var(--red)}
+.hero{padding:70px 0 40px;border-bottom:2px solid var(--ink)}
+.hero h1{font-size:clamp(38px,7vw,72px);line-height:1.15;margin:0 0 14px;letter-spacing:-.03em}.hero h1 em{font-style:normal;color:var(--red)}
+.hero p{font-size:19px;color:#333;max-width:560px;margin:0}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:28px 0 20px}
+.chip{border:1px solid var(--ink);background:transparent;border-radius:99px;padding:6px 16px;cursor:pointer;font:inherit;font-size:14px}
+.chip.on{background:var(--ink);color:#fff}.chip b{color:var(--red);margin-right:4px}.chip.on b{color:#ff8a80}
+input{margin-left:auto;border:1px solid var(--line);border-radius:99px;padding:7px 16px;font:inherit;font-size:14px;background:#fff;min-width:200px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;padding-bottom:60px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;cursor:pointer;transition:.18s;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--ink);text-align:left;font:inherit;color:inherit}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px #0001;border-top-color:var(--red)}
+.card .top{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.card h3{margin:0;font-size:19px;line-height:1.35}.card .s{color:#444;font-size:14px;margin:0}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:#efece4;color:#555;margin:2px 4px 0 0}
+.empty{grid-column:1/-1;color:var(--mut);padding:40px 0;text-align:center}
+.modal{position:fixed;inset:0;background:#1c1f26cc;display:none;align-items:center;justify-content:center;padding:20px;z-index:9}
+.modal.open{display:flex}.sheet{background:#fff;border-radius:16px;max-width:560px;width:100%;padding:30px;border-top:6px solid var(--red);position:relative}
+.sheet h2{margin:4px 0 2px;font-size:26px}.x{position:absolute;right:16px;top:12px;border:0;background:none;font-size:26px;cursor:pointer}
+.ey{color:var(--red);font-size:12px;letter-spacing:.12em;font-weight:700}
+footer{border-top:2px solid var(--ink);padding:28px 0 50px;font-size:14px;color:var(--mut)}
+</style></head><body><div class="wrap">
+<nav><div class="logo"><span class="mark"></span>상보 相補</div><span style="font-size:14px;color:var(--mut)">Portfolio 2026</span></nav>
+<section class="hero"><h1>차가운 수식과<br>따뜻한 사람,<br><em>둘 다</em> 있어야 완성.</h1><p>기계공학을 공부하며 탄소중립을 설계하고, 물리를 삶에 비춰 쓰고, 사람이 모이는 자리를 만듭니다.</p></section>
+<div class="tools" id="tools"></div><div class="grid" id="grid"></div>
+<footer>상보(Complement) 포트폴리오 · 항목은 Gemini 대화에 드러난 작업을 기반으로 정리했어요. 내용은 자유롭게 수정하세요.</footer></div>
+<div class="modal" id="m"><div class="sheet"><button class="x" id="cl">×</button><div class="ey" id="mc"></div><h2 id="mt"></h2><p id="ms" style="color:#555;margin:0 0 12px"></p><p id="mp"></p><div id="mk"></div></div></div>
+<script>
+const W=[{"c":1,"t":"회전축 피로 해석 발표","d":"5–6월","s":"기계설계 4-16 문제를 발표용으로 재구성","p":"교재 그림을 흰 배경·무채색으로 다시 그리고, A·B 지점 반력과 하중만 붉게 표시했어요. 발표 대본의 '결론과 고찰'도 썼고, 문제 성격 정의의 '응력 집중=위험 지점' 표현이 부정확하다고 스스로 짚어 고쳤어요.","k":["기계설계","피로 파손","발표 디자인"]},{"c":1,"t":"경계층 · 평판 유동 풀이노트","d":"6월","s":"응용유체역학 8.82, 8.98 + 족보 문제","p":"솔루션이 이해되지 않고 단위가 달라 SI 단위로 처음부터 다시 풀었어요. 임계 레이놀즈수로 천이 거리를 구하는 과정, 마찰 저항과 항력의 구분까지 질문하며 정리했어요.","k":["유체역학","SI 단위","경계층"]},{"c":1,"t":"열역학 개념 정리","d":"8–9월","s":"클라우지우스 부등식, 정적·정압비열, 일의 부호","p":"일을 받을 때의 부호 규약이 헷갈려 반례까지 따져 물으며 정리했어요.","k":["열역학","부호 규약"]},{"c":1,"t":"미분방정식 · 라플라스 검산","d":"6월","s":"연립 미방 대각화, 54번 합성곱 정리","p":"'답안지가 이상한 것 같다'며 풀이를 다시 써 보고, 대각화 후 분리된 방정식의 해를 구하는 단계를 끝까지 이해하려 했어요.","k":["대각화","라플라스","검산"]},{"c":2,"t":"저탄소 책 라벨링 제도","d":"5월 27일","s":"종이책의 탄소 배출을 줄이는 제도 구상","p":"①친환경 종이 표시 ②저탄소 책 구매 포인트 ③기업 자발 참여 유도의 3단 구조예요. 자료(Impakter)는 원출처까지 확인해 출처 표기를 바로잡았어요. 기업 유인책은 공공도서관 우선 구매 같은 방향으로 확장했어요.","k":["탄소중립","제도 설계","출판"]},{"c":2,"t":"제로웨이스트의 한계 독해","d":"5월 26일","s":"『재앙의 지리학』 비판 정리","p":"보이는 쓰레기 vs 공급망의 탄소, 재앙의 수출, 구조적 책임의 개인화 세 축으로 정리했어요.","k":["독서","기후정의"]},{"c":2,"t":"EU vs 한국 탄소중립 정책 비교","d":"5월 26일","s":"CBAM, 자연복원법, 수리할 권리","p":"EU에 있고 한국에는 아직 없는 정책을 찾아 비교했어요.","k":["정책 비교","CBAM"]},{"c":2,"t":"에너지 연구 탐색","d":"6월 16일","s":"국민대 신동훈 교수 연구 요약","p":"에너지 분야 관심에서 출발해 학교 연구실의 연구를 찾아봤어요.","k":["에너지","진로"]},{"c":3,"t":"인터스텔라와 상보성","d":"6월 8일","s":"사랑은 국소성인가 비국소성인가","p":"어릴 땐 벅찼던 영화를 상대성이론을 알고 다시 보고 '시공간을 넘는 사랑'으로 읽어냈어요. 과학(수단)과 사랑(목적)의 상보 관계가 핵심이에요.","k":["양자역학","영화","상보성"]},{"c":3,"t":"국소성 vs 상보성 에세이","d":"6월 8일","s":"내 삶으로 쓰는 양자역학 과제","p":"'내 삶은 둘이 섞여 있고 세계는 상보성 쪽으로 간다'는 가설로 쓴 20줄 이상의 과제예요. 이 브랜드 철학의 출발점이에요.","k":["에세이","철학"]},{"c":3,"t":"동시성 파괴 실험 보고서","d":"5월 17일","s":"빛과 아인슈타인 11주차 결과 파트","p":"관찰자 a~d의 관측 표를 바로잡고 '느꼈다'를 '관찰하였다'로 바꿔 객관적인 서술로 다듬었어요.","k":["특수상대성","실험 보고서"]},{"c":4,"t":"그림사랑 · 책모꼬지 북페스티벌","d":"11월 2일","s":"성북구 축제에서 아동 페이스페인팅","p":"동아리 이름으로 축제에 참여해 아이들에게 페이스페인팅을 진행하고, 활동 보고서를 썼어요.","k":["그림사랑","페이스페인팅","축제"]},{"c":4,"t":"개강총회 · 종강총회 기획","d":"2025–2026","s":"신입생 환영회 보고서, 22명 종강총회 메뉴","p":"친목과 신입생 적응을 목적으로 한 행사 기록, 그리고 22인 모임 음식 구성까지 챙겼어요.","k":["행사 기획","커뮤니티"]},{"c":4,"t":"2026-1 대동체 부스 운영","d":"5월 18일","s":"참가자 명단 자동 추출","p":"엑셀 함수로 부스 운영 참가자를 한 번에 뽑는 방법을 찾아 명단을 정리했어요.","k":["엑셀","운영"]},{"c":5,"t":"코업(Co-op) 지원 동기","d":"5월 30일","s":"'미리 현장에서 경험하고 싶다'","p":"3가지 톤의 초안을 받아 가장 맞는 방향을 골랐어요. 구체적 직무명을 넣으라는 피드백이 남은 과제예요.","k":["코업","지원서"]},{"c":5,"t":"학습 관리 시스템","d":"9월 24일","s":"노션으로 기록과 일정 관리","p":"초보자용 노션 영상을 찾아 수업 기록과 학습 일정을 한곳에서 관리할 준비를 하고 있어요. 일반기계기사 필기 2주 합격 후기도 찾아봤어요.","k":["노션","일반기계기사"]}],C={"1":["①","상보 노트","공학"],"2":["②","상보 랩","지속가능"],"3":["③","상보 사유","물리와 인문"],"4":["④","상보 마당","사람과 그림"],"5":["⑤","상보 로그","성장 기록"]};let cur=0,q='';
+const $=i=>document.getElementById(i);
+function tools(){ $('tools').innerHTML='<button class="chip '+(cur==0?'on':'')+'" data-c="0">전체 '+W.length+'</button>'+Object.entries(C).map(([k,v])=>'<button class="chip '+(cur==k?'on':'')+'" data-c="'+k+'"><b>'+v[0]+'</b>'+v[1]+'</button>').join('')+'<input id="q" placeholder="검색" value="'+q+'">';
+ document.querySelectorAll('.chip').forEach(b=>b.onclick=()=>{cur=+b.dataset.c;tools();draw()});
+ const i=$('q');i.oninput=()=>{q=i.value;draw()};}
+function draw(){const l=W.map((w,i)=>({...w,i})).filter(w=>(!cur||w.c==cur)&&(w.t+w.s+w.p+w.k.join()).includes(q));
+ $('grid').innerHTML=l.length?l.map(w=>'<button class="card" data-i="'+w.i+'"><div class="top"><span>'+C[w.c][1]+'</span><span>'+w.d+'</span></div><h3>'+w.t+'</h3><p class="s">'+w.s+'</p><div>'+w.k.map(x=>'<span class="tag">'+x+'</span>').join('')+'</div></button>').join(''):'<div class="empty">결과가 없어요</div>';
+ document.querySelectorAll('.card').forEach(b=>b.onclick=()=>{const w=W[b.dataset.i];$('mc').textContent=C[w.c][0]+' '+C[w.c][1]+' · '+w.d;$('mt').textContent=w.t;$('ms').textContent=w.s;$('mp').textContent=w.p;$('mk').innerHTML=w.k.map(x=>'<span class="tag">'+x+'</span>').join('');$('m').classList.add('open')});}
+$('cl').onclick=()=>$('m').classList.remove('open');$('m').onclick=e=>{if(e.target.id=='m')$('m').classList.remove('open')};
+document.onkeydown=e=>{if(e.key=='Escape')$('m').classList.remove('open')};
+tools();draw();
+</script></body></html>
